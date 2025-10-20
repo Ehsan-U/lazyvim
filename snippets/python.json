@@ -1,0 +1,10 @@
+{
+  "Request Time": {
+    "prefix": "req_at",
+    "body": "\"requested_at\": response.requested_at"
+  },
+  "Response Time": {
+    "prefix": "resp_at",
+    "body": "\"responded_at\": response.responded_at"
+  }
+}
