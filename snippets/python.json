@@ -6,5 +6,19 @@
   "Response Time": {
     "prefix": "resp_at",
     "body": "\"responded_at\": response.responded_at"
+  },
+  "Pipelines List": {
+    "prefix": "pipelines",
+    "body": [
+      "pipelines = [",
+      "    \"synoptic_grpc_useast1\",",
+      "    \"synoptic_grpc_eucentral1\",",
+      "    \"synoptic_grpc_euwest2\",",
+      "    \"synoptic_grpc_useast1chi2a\",",
+      "    \"synoptic_grpc_useast1nyc2a\",",
+      "    \"synoptic_grpc_apnortheast1\",",
+      "    \"synoptic_grpc\",",
+      "]"
+    ]
   }
 }
