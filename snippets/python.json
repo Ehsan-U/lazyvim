@@ -8,7 +8,7 @@
     "body": "\"responded_at\": response.responded_at"
   },
   "Pipelines List": {
-    "prefix": "pipelines",
+    "prefix": "enterprise_pipelines",
     "body": [
       "pipelines = [",
       "    \"synoptic_grpc_useast1\",",
@@ -17,7 +17,6 @@
       "    \"synoptic_grpc_useast1chi2a\",",
       "    \"synoptic_grpc_useast1nyc2a\",",
       "    \"synoptic_grpc_apnortheast1\",",
-      "    \"synoptic_grpc\",",
       "]"
     ]
   }
