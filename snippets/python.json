@@ -19,5 +19,21 @@
       "    \"synoptic_grpc_apnortheast1\",",
       "]"
     ]
+  },
+  "Scraper Post Payload": {
+    "prefix": "itxp_payload",
+    "body": [
+      "payload = {",
+      "    \"scraper\": item.get(\"_spider\"),",
+      "    \"type\": \"post\",",
+      "    \"post\": {",
+      "        \"url\": $1,",
+      "        \"headline\": $2,",
+      "        \"published_at\": $3,",
+      "        \"scraped_at\": $4",
+      "    },",
+      "}"
+    ],
+    "description": "Scraper post payload structure"
   }
 }
