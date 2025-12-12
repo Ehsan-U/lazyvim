@@ -20,20 +20,28 @@
       "]"
     ]
   },
-  "Scraper Post Payload": {
-    "prefix": "itxp_payload",
+  "ITXP Pipeline": {
+    "prefix": "itxp_override",
     "body": [
-      "payload = {",
-      "    \"scraper\": item.get(\"_spider\"),",
-      "    \"type\": \"post\",",
-      "    \"post\": {",
-      "        \"url\": $1,",
-      "        \"headline\": $2,",
-      "        \"published_at\": $3,",
-      "        \"scraped_at\": item.get(\"_scraped_at\")",
-      "    },",
-      "}"
+      "from zenx.pipelines.itxp import ItxpPipeline",
+      "from typing import Dict",
+      "",
+      "",
+      "class ${1:Custom}ItxpPipeline(ItxpPipeline):",
+      "",
+      "\tasync def process_item(self, item: Dict) -> None:",
+      "\t\tpayload = {",
+      "\t\t\t\"scraper\": item.get(\"_spider\"),",
+      "\t\t\t\"type\": \"post\",",
+      "\t\t\t\"post\": {",
+      "\t\t\t\t\"url\": item.get(\"${2:link}\"),",
+      "\t\t\t\t\"headline\": item.get(\"${3:headline}\"),",
+      "\t\t\t\t\"published_at\": ${4:None},",
+      "\t\t\t\t\"scraped_at\": item.get(\"_scraped_at\")",
+      "\t\t\t},",
+      "\t\t}",
+      "\t\tawait self.send(payload)"
     ],
-    "description": "Scraper post payload structure"
+    "description": "ITXP Pipeline class"
   }
 }
