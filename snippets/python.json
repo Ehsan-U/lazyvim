@@ -30,7 +30,7 @@
       "        \"url\": $1,",
       "        \"headline\": $2,",
       "        \"published_at\": $3,",
-      "        \"scraped_at\": $4",
+      "        \"scraped_at\": item.get(\"_scraped_at\")",
       "    },",
       "}"
     ],
