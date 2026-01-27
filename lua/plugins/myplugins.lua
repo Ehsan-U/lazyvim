@@ -18,4 +18,15 @@ return {
       return opts
     end,
   },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      terminal = {
+        win = {
+          position = "float",
+        },
+      },
+    },
+  },
 }
