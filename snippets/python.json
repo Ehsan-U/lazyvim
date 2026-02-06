@@ -1,47 +1,6 @@
 {
-  "Request Time": {
-    "prefix": "req_at",
-    "body": "\"requested_at\": response.requested_at"
-  },
-  "Response Time": {
+  "Example": {
     "prefix": "resp_at",
     "body": "\"responded_at\": response.responded_at"
-  },
-  "Pipelines List": {
-    "prefix": "enterprise_pipelines",
-    "body": [
-      "pipelines = [",
-      "    \"synoptic_grpc_useast1\",",
-      "    \"synoptic_grpc_eucentral1\",",
-      "    \"synoptic_grpc_euwest2\",",
-      "    \"synoptic_grpc_useast1chi2a\",",
-      "    \"synoptic_grpc_useast1nyc2a\",",
-      "    \"synoptic_grpc_apnortheast1\",",
-      "]"
-    ]
-  },
-  "ITXP Pipeline": {
-    "prefix": "itxp_override",
-    "body": [
-      "from zenx.pipelines.itxp import ItxpPipeline",
-      "from typing import Dict",
-      "",
-      "",
-      "class ${1:Custom}ItxpPipeline(ItxpPipeline):",
-      "",
-      "\tasync def process_item(self, item: Dict) -> None:",
-      "\t\tpayload = {",
-      "\t\t\t\"scraper\": item.get(\"_spider\"),",
-      "\t\t\t\"type\": \"post\",",
-      "\t\t\t\"post\": {",
-      "\t\t\t\t\"url\": item.get(\"${2:link}\"),",
-      "\t\t\t\t\"headline\": item.get(\"${3:headline}\"),",
-      "\t\t\t\t\"published_at\": ${4:None},",
-      "\t\t\t\t\"scraped_at\": item.get(\"_scraped_at\")",
-      "\t\t\t},",
-      "\t\t}",
-      "\t\tawait self.send(payload)"
-    ],
-    "description": "ITXP Pipeline class"
   }
 }
